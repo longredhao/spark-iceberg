@@ -1,5 +1,5 @@
-Spark with Iceberg
-==================
+Apache Spark with Iceberg
+=========================
 
 
 ### Sample Queries:
@@ -7,9 +7,12 @@ Spark with Iceberg
 CREATE TABLE local.db.table (id bigint, data string) USING iceberg;
 INSERT INTO local.db.table VALUES (1, 'a'), (2, 'b'), (3, 'c');
 SELECT count(1) as count, data FROM local.db.table GROUP BY data;
+
+DESCRIBE NAMESPACE default;
+DESCRIBE TABLE local.db.table;
+
 SELECT * FROM local.db.table.snapshots;
 
-describe namespace default;
 ```
 
 ### TABLE PARTITIONED BY category 
